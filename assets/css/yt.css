@@ -1,0 +1,284 @@
+/* Base */
+
+.youtube {
+    --background-color: #202020;
+    --light-accent-color: #212121;
+    --dark-accent-color: #181818;
+    --border-color: #373737;
+    --header-height: 65px;
+    --content-height: calc(100% - 65px);
+    --flex-gap: 15px;
+    --flex-gap-double: 30px;
+  }
+
+  
+  
+  *,
+  *::after,
+  *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Helvetica, Arial, sans-serif;
+    color: #fff;
+  }
+  
+  html,
+  body,
+  .youtube {
+    height: 100%;
+  }
+  
+  .youtube {
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+  
+  /* Blocks */
+  
+  header {
+    flex: 0 0 100%;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--flex-gap) var(--flex-gap-double);
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .header-left {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: var(--flex-gap);
+  }
+  
+  .header-middle {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+  }
+  
+  .header-right {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    gap: var(--flex-gap);
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+  aside {
+    flex: 0 0 250px;
+    height: var(--content-height);
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    padding: 15px 0;
+    background-color: var(--light-accent-color);
+  }
+  
+  section {
+    flex: 1;
+    height: var(--content-height);
+    display: flex;
+    flex-direction: column;
+    padding: var(--flex-gap);
+    gap: var(--flex-gap);
+    background-color: var(--dark-accent-color);
+  }
+  
+  /* Components */
+  
+  .sidebar-toggle {
+    cursor: pointer;
+    flex: 0 0 20px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .bar {
+    width: 100%;
+    flex: 0 0 2px;
+    background-color: #fff;
+  }
+  
+  .logo {
+    padding: 5px;
+    height: 100%;
+  }
+  
+  .logo img {
+    height: 100%;
+  }
+  
+  .search-text {
+    border: none;
+    width: 500px;
+    height: 100%;
+    padding: 5px;
+    font-size: 16px;
+    background-color: #121212;
+    color: #fff;
+  }
+  
+  .search-submit {
+    cursor: pointer;
+    position: relative;
+    width: 60px;
+    height: 100%;
+    background-color: #313131;
+  }
+  .search-submit::after {
+    content: "";
+    width: 100%;
+    height: calc(100% - 15px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    background-image: url(https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/search-512.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: invert(100%);
+  }
+  
+  .menu-item {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: var(--flex-gap-double);
+    padding: 12px var(--flex-gap-double);
+  }
+  
+  .menu-item.selected,
+  .menu-item:hover {
+    background-color: #4c4c4c;
+  }
+  
+  .video-row {
+    flex: 1;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .video {
+    cursor: pointer;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--flex-gap);
+  }
+  
+  .video img {
+    aspect-ratio: 3 / 2;
+    width: 100%;
+  }
+  
+  /* Icons */
+  
+  .icon {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: invert(100%);
+  }
+  
+  .create {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Video_camera_icon.svg/1200px-Video_camera_icon.svg.png);
+  }
+  
+  .apps {
+    background-image: url(https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_apps_48px-512.png);
+  }
+  
+  .notifications {
+    background-image: url(https://cdn4.iconfinder.com/data/icons/single-width-stroke/24/oui-icons-38-512.png);
+  }
+  
+  .account {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: darkred;
+    border-radius: 100%;
+  }
+  
+  .home {
+    background-image: url(https://cdn-icons-png.flaticon.com/512/74/74807.png);
+    transform: scale(0.8);
+  }
+  
+  .explore {
+    background-image: url(https://cdn.iconscout.com/icon/free/png-256/explore-1781524-1513844.png);
+  }
+  
+  .shorts {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Youtube_shorts_icon.svg/1200px-Youtube_shorts_icon.svg.png);
+    filter: grayscale(100%) invert(100%);
+  }
+  
+  .subscriptions {
+    background-image: url(https://icon-library.com/images/video-image-icon/video-image-icon-18.jpg);
+  }
+  
+  .library {
+    background-image: url(https://icon-library.com/images/photo-library-icon/photo-library-icon-16.jpg);
+  }
+  
+  .history {
+    background-image: none;
+  }
+  
+  .videos {
+    background-image: url(http://cdn.onlinewebfonts.com/svg/img_497355.png);
+  }
+  
+  body {font-family: Arial, Helvetica, sans-serif;}
+  
+  
+  
+  .container {
+    padding: 10px;
+    background-color: #060606;
+  }
+  
+  .a {
+    width: 100%;
+    padding: 15px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  input[type=checkbox] {
+    margin-top: 16px;
+  }
+  
+  input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    border: none;
+  }
+  
+  input[type=submit]:hover {
+    opacity: 0.8;
+  }
