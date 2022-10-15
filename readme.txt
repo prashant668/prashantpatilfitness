@@ -1,8 +1,5 @@
-Thank you for using our template!
+WE ARE PRASHANT PATIL FITNESS 
 
-For more awesome templates please visit https://colorlib.com/wp/templates/
+I'm a fitness trainer and personal trainer. I love to push myself, challenge myself and help people achieve their goals. I love working out and helping people reach their goals. I have the best clients and friends!
 
-Copyright information for the template can't be altered/removed unless you purchase a license.
-More information about the license is available here: https://colorlib.com/wp/licence/
-
-Removing copyright information without the license will result in suspension of your hosting and/or domain name(s).
+I'm a fitness coach and personal trainer. I love to motivate others and help them achieve their goals. I am passionate about helping people reach their goals, whether it be weight loss, muscle gain or fitness level. My goal is to help people reach their goals through physical therapy, nutrition, and training.
