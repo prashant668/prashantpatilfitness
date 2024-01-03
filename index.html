@@ -112,7 +112,355 @@
         </div>
     </div>
     <!-- slider Area End-->
+	   <meta charset="UTF-8">
+    <title>CodePen Demo</title>
+  
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="main.css">
+    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+    <link rel="mask-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111">
+    <link rel="canonical" href="https://codepen.io/kristen17/pen/GRXgqaB">
+  
+    
+    
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+  
+    <style id="INLINE_PEN_STYLESHEET_ID">
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Roboto:wght@300;400;500;900&display=swap");
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+  }
+  
+  main {
+    position: relative;
+    width: calc(min(90rem, 90%));
+    margin: 0 auto;
+    min-height: 100vh;
+    column-gap: 3rem;
+    padding-block: min(20vh, 3rem);
+  }
+  
+  .bg {
+    position: fixed;
+    top: -4rem;
+    left: -12rem;
+    z-index: -1;
+    opacity: 0;
+  }
+  
+  .bg2 {
+    position: fixed;
+    bottom: -2rem;
+    right: -3rem;
+    z-index: -1;
+    width: 9.375rem;
+    opacity: 0;
+  }
+  
+  main > div span {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 1rem;
+    color: #717171;
+  }
+  
+  main > div h1 {
+    text-transform: capitalize;
+    letter-spacing: 0.8px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 1000;
+    font-size: clamp(3.4375rem, 3.25rem + 0.vw, 4rem);
+    background-color: #005baa;
+    background-image: linear-gradient(45deg, #005baa, #000000);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+  }
+  
+  main > div hr {
+    display: block;
+    background: #005baa;
+    height: 0.25rem;
+    width: 6.25rem;
+    border: none;
+    margin: 1.125rem 0 1.875rem 0;
+  }
+  
+  main > div p {
+    line-height: 1.6;
+  }
+  
+  main a {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #717171;
+    font-weight: 500;
+    background: #fff;
+    border-radius: 3.125rem;
+    transition: 0.3s ease-in-out;
+  }
+  
+  main > div > a {
+    border: 2px solid #c2c2c2;
+    margin-top: 2.188rem;
+    padding: 0.625rem 1.875rem;
+  }
+  
+  main > div > a:hover {
+    border: 0.125rem solid #005baa;
+    color: #005baa;
+  }
+  
+  .swiper {
+    width: 100%;
+    padding-top: 3.125rem;
+  }
+  
+  .swiper-pagination-bullet,
+  .swiper-pagination-bullet-active {
+    background: #fff;
+  }
+  
+  .swiper-pagination {
+    bottom: 1.25rem !important;
+  }
+  
+  .swiper-slide {
+    width: 18.75rem;
+    height: 28.125rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: self-start;
+  }
+  
+  .swiper-slide h2 {
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    margin-bottom: 0.625rem;
+    padding: 0 0 0 1.563rem;
+    text-transform: uppercase;
+  }
+  
+  .swiper-slide p {
+    color: #dadada;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    padding: 0 1.563rem;
+    line-height: 1.6;
+    font-size: 0.75rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .swiper-slide a {
+    margin: 1.25rem 1.563rem 3.438rem 1.563rem;
+    padding: 0.438em 1.875rem;
+    font-size: 0.9rem;
+  }
+  
+  .swiper-slide a:hover {
+    color: #005baa;
+  }
+  
+  .swiper-slide div {
+    display: none;
+    opacity: 0;
+    padding-bottom: 0.625rem;
+  }
+  
+  .swiper-slide-active div {
+    display: block;
+    opacity: 1;
+  }
+  
+  .swiper-slide--one {
+    background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url("https://prashant668.github.io/prashantpatilfitness/assets/img/gallery/team1.png") no-repeat 50% 50%/cover;
+  }
+  
+  .swiper-slide--two {
+    background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url("https://prashant668.github.io/prashantpatilfitness/assets/img/gallery/team2.png") no-repeat 50% 50%/cover;
+  }
+  
+  .swiper-slide--three {
+    background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url("https://prashant668.github.io/prashantpatilfitness/assets/img/gallery/team3.png") no-repeat 50% 50%/cover;
+  }
+  
+  .swiper-slide--four {
+    background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url("https://prashant668.github.io/prashantpatilfitness/assets/img/gallery/team4.png") no-repeat 50% 50%/cover;
+  }
+  
+  .swiper-slide--five {
+    background: linear-gradient(to top, #0f2027, #203a4300, #2c536400), url("https://prashant668.github.io/prashantpatilfitness/assets/img/gallery/team5.png") no-repeat 50% 50%/cover;
+  }
+  
+  .swiper-3d .swiper-slide-shadow-left,
+  .swiper-3d .swiper-slide-shadow-right {
+    background-image: none;
+  }
+  
+  @media screen and (min-width: 48rem) {
+    main {
+      display: flex;
+      align-items: center;
+    }
+  
+    .bg,
+  .bg2 {
+      opacity: 0.1;
+    }
+  }
+  @media screen and (min-width: 93.75rem) {
+    .swiper {
+      width: 85%;
+    }
+  }
+    </style>
+  
+    
+  <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+  <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeConsoleRunner-6d8bf8b4b479137260842506acbb12717dace0823c023e08b96360e60b0840d9.js"></script>
+  <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-44fe83e49b63affec96918c9af88c0d80b209a862cf87ac46bc933074b8c557d.js"></script>
+  <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRuntimeErrors-4f205f2c14e769b448bcf477de2938c681660d5038bc464e3700256713ebe261.js"></script>
+  </head>
+  
+  <body data-new-gr-c-s-check-loaded="14.1147.0" data-gr-ext-installed="">
+    <main>
+    <div>
+      <span>PPF
+      </span>
+      <h1>TrainNourish </h1>
+         <h1>with PrashantPatilFitness </h1>
+      <hr>
+      <p>
+  "Elevate your fitness journey with exclusive offers - sculpt your body, fuel your vitality, and achieve your wellness goals with our premium fitness packages!,
+        "</p>
+      <p>
+  Embark on a healthier you this New Year! Unwrap the gift of wellness with our exclusive fitness offers - your path to a fitter, stronger, and happier 2024 starts here.
+        "</p>
+      <a href="https://beacons.ai/prashantpatilfitness">GRAB OFFERS NOW</a>
+    </div>
+    <div class="swiper swiper-coverflow swiper-3d swiper-initialized swiper-horizontal swiper-pointer-events swiper-watch-progress">
+      <div class="swiper-wrapper" id="swiper-wrapper-70be5e3ab8603610" aria-live="polite" style="cursor: grab; transition-duration: 0ms; transform: translate3d(-444px, 0px, 0px);"><div class="swiper-slide swiper-slide--four swiper-slide-duplicate" role="group" aria-label="4 / 5" data-swiper-slide-index="3" style="width: 296px; transition-duration: 0ms; transform: translate3d(0px, 0px, -600px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -5;">
+  
+          <div>
+            <h2>  FAT LOSS</h2>
+            <p>
+           
+  THIS PLANS IN MAINLY FOCUSED ON FAT LOSS BURING ONLY FAT AND PRESERVING MUSCLE
+            </p>
+            <a href="https://beacons.ai/prashantpatilfitness" target="https://beacons.ai/prashantpatilfitness">GET NOW</a>
+          </div>
+        <div class="swiper-slide-shadow-left" style="opacity: 6; transition-duration: 0ms;"></div><div class="swiper-slide-shadow-right" style="opacity: 0; transition-duration: 0ms;"></div></div><div class="swiper-slide swiper-slide--five swiper-slide-duplicate swiper-slide-visible swiper-slide-prev" role="group" aria-label="5 / 5" data-swiper-slide-index="4" style="width: 296px; transition-duration: 0ms; transform: translate3d(0px, 0px, -300px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -2;">
+  
+          <div>
+            <h2>COMPITITION PREP(CUTTING)</h2>
+            <p>
+              
+  THIS PLAN WILL MAKE YOU BODYBUILDING COMPITITION STAGE READY PEALED BODY
+            </p>
+            <a href="https://beacons.ai/prashantpatilfitness" target="https://beacons.ai/prashantpatilfitness">explore</a>
+          </div>
+        <div class="swiper-slide-shadow-left" style="opacity: 3; transition-duration: 0ms;"></div><div class="swiper-slide-shadow-right" style="opacity: 0; transition-duration: 0ms;"></div></div>
+        <div class="swiper-slide swiper-slide--one swiper-slide-visible swiper-slide-active" role="group" aria-label="1 / 5" data-swiper-slide-index="0" style="width: 296px; transition-duration: 0ms; transform: translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) scale(1); z-index: 1;">
+          <div>
+            <h2>BODY BUILDING</h2>
+            <p>
+  HERE YOU WILL BE TRAINED AND GUIDED TO BUILD YOUR BODY SRTUCTURE SYMMENTRY AND ALL BB THINGS</p>
+            <a href="https://beacons.ai/prashantpatilfitness" target="https://beacons.ai/prashantpatilfitness">GET NOW</a>
+          </div>
+        <div class="swiper-slide-shadow-left" style="opacity: 0; transition-duration: 0ms;"></div><div class="swiper-slide-shadow-right" style="opacity: 0; transition-duration: 0ms;"></div></div>
+        <div class="swiper-slide swiper-slide--two swiper-slide-visible swiper-slide-next" role="group" aria-label="2 / 5" data-swiper-slide-index="1" style="width: 296px; transition-duration: 0ms; transform: translate3d(0px, 0px, -300px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -2;">
+          <div>
+            <h2> MUSCLE GAIN</h2>
+            <p>
+             
+  HERE WILL ONLY FOCUS ON MUSCLE GAINING MUSCLE SYMMENTRY AND SIZE
+            </p>
+            <a href="https://beacons.ai/prashantpatilfitness" target="https://beacons.ai/prashantpatilfitness">GET NOW</a>
+          </div>
+        <div class="swiper-slide-shadow-left" style="opacity: 0; transition-duration: 0ms;"></div><div class="swiper-slide-shadow-right" style="opacity: 3; transition-duration: 0ms;"></div></div>
+  
+        <div class="swiper-slide swiper-slide--three" role="group" aria-label="3 / 5" data-swiper-slide-index="2" style="width: 296px; transition-duration: 0ms; transform: translate3d(0px, 0px, -600px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -5;">
+  
+          <div>
+            <h2> WEIGHT LOSS</h2>
+            <p>
+            
+  IN THIS PLANS, MAILY FOCUSED O WEIGHT LOSS NCLUDING YOUR MUSCLES
+            </p>
+            <a href="https://beacons.ai/prashantpatilfitness" target="https://beacons.ai/prashantpatilfitness">GET NOW</a>
+          </div>
+        <div class="swiper-slide-shadow-left" style="opacity: 0; transition-duration: 0ms;"></div><div class="swiper-slide-shadow-right" style="opacity: 6; transition-duration: 0ms;"></div></div>
+  
+        <div class="swiper-slide swiper-slide--four" role="group" aria-label="4 / 5" data-swiper-slide-index="3" style="width: 296px; transition-duration: 0ms; transform: translate3d(0px, 0px, -900px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -8;">
+  
+          <div>
+            <h2>  FAT LOSS</h2>
+            <p>
+           
+  THIS PLANS IN MAINLY FOCUSED ON FAT LOSS BURING ONLY FAT AND PRESERVING MUSCLE
+            </p>
+            <a href="https://beacons.ai/prashantpatilfitness" target="https://beacons.ai/prashantpatilfitness">GET NOW</a>
+          </div>
+        <div class="swiper-slide-shadow-left" style="opacity: 0; transition-duration: 0ms;"></div><div class="swiper-slide-shadow-right" style="opacity: 9; transition-duration: 0ms;"></div></div>
+  
+        <div class="swiper-slide swiper-slide--five swiper-slide-duplicate-prev" role="group" aria-label="5 / 5" data-swiper-slide-index="4" style="width: 296px; transition-duration: 0ms; transform: translate3d(0px, 0px, -1200px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -11;">
+  
+          <div>
+            <h2>COMPITITION PREP(CUTTING)</h2>
+            <p>
+              
+  THIS PLAN WILL MAKE YOU BODYBUILDING COMPITITION STAGE READY PEALED BODY
+            </p>
+            <a href="https://beacons.ai/prashantpatilfitness" target="https://beacons.ai/prashantpatilfitness">explore</a>
+          </div>
+        <div class="swiper-slide-shadow-left" style="opacity: 0; transition-duration: 0ms;"></div><div class="swiper-slide-shadow-right" style="opacity: 12; transition-duration: 0ms;"></div></div>
+      <div class="swiper-slide swiper-slide--one swiper-slide-duplicate swiper-slide-duplicate-active" role="group" aria-label="1 / 5" data-swiper-slide-index="0" style="width: 296px; transition-duration: 0ms; transform: translate3d(0px, 0px, -1500px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -14;">
+          <div>
+            <h2>BODY BUILDING</h2>
+            <p>
+  HERE YOU WILL BE TRAINED AND GUIDED TO BUILD YOUR BODY SRTUCTURE SYMMENTRY AND ALL BB THINGS</p>
+            <a href="https://beacons.ai/prashantpatilfitness" target="https://beacons.ai/prashantpatilfitness">GET NOW</a>
+          </div>
+        <div class="swiper-slide-shadow-left" style="opacity: 0; transition-duration: 0ms;"></div><div class="swiper-slide-shadow-right" style="opacity: 15; transition-duration: 0ms;"></div></div><div class="swiper-slide swiper-slide--two swiper-slide-duplicate swiper-slide-duplicate-next" role="group" aria-label="2 / 5" data-swiper-slide-index="1" style="width: 296px; transition-duration: 0ms; transform: translate3d(0px, 0px, -1800px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -17;">
+          <div>
+            <h2> MUSCLE GAIN</h2>
+            <p>
+             
+  HERE WILL ONLY FOCUS ON MUSCLE GAINING MUSCLE SYMMENTRY AND SIZE
+            </p>
+            <a href="https://beacons.ai/prashantpatilfitness" target="https://beacons.ai/prashantpatilfitness">GET NOW</a>
+          </div>
+        <div class="swiper-slide-shadow-left" style="opacity: 0; transition-duration: 0ms;"></div><div class="swiper-slide-shadow-right" style="opacity: 18; transition-duration: 0ms;"></div></div></div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1" aria-current="true"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 4"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 5"></span></div>
+    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+    <img src="https://banner2.cleanpng.com/20180306/ccw/kisspng-physical-fitness-logo-fitness-centre-women-s-weightlifting-5a9e29ed2080e9.9355682315203148611331.jpg" alt="" class="bg">
+    <img src="https://cdn.pixabay.com/photo/2012/04/13/13/57/scallop-32506_960_720.png" alt="" class="bg2">
+  </main>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+    <script src="https://cdpn.io/cpe/boomboom/pen.js?key=pen.js-33af4334-71e8-47c7-5356-c445a36e6dfc" crossorigin=""></script>
+    <script src="main.js"> </script>
       <!-- Traning categories Start -->
+
+
+
+
+	
     
       <h2 style="text-align:center;">MY CERTIFICATIONS</h2>
       <section class="traning-categories black-bg">
